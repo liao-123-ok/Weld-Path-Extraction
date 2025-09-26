@@ -1,0 +1,27 @@
+function [isIntersect,is_point] = lineIntersectsPlane(P1, P2, A, B, C, D)
+    % 判断空间平面是否与线段相交，输出相交点
+    % P1 和 P2 是线段的两个端点 [x, y, z]
+    % A, B, C, D 是平面方程 Ax + By + Cz + D = 0 的系数
+    x1 = P1(1);
+    y1 = P1(2);
+    z1 = P1(3);
+
+    x2 = P2(1);
+    y2 = P2(2);
+    z2 = P2(3);
+
+    P12 = P2 - P1;
+    norm_P = norm_v = norm(norm_he);
+    %% 
+    syms t;
+    equation = A*(P0(1) + t*d(1)) + B*(P0(2) + t*d(2)) + C*(P0(3) + t*d(3)) + D;
+    t_value = solve(equation, t);
+    intersection_point = P0 + t_value * d;
+
+    distance1 = A * x1 + B * y1 + C * z1 + D;
+    distance2 = A * x2 + B * y2 + C * z2 + D;
+    crosses = (distance1 * distance2 <= 0);
+    if crosses
+
+    end
+end
